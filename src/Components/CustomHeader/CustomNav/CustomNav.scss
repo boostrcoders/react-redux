@@ -1,0 +1,135 @@
+@mixin easeOut {
+  transition: all 0.5s ease-out;
+}
+
+@mixin bounceOut {
+  transition: all 0.8s cubic-bezier(0.49, 0.19, 0.37, 1.56);
+}
+
+.custom-nav {
+  color: #ffffff;
+  padding: 22px 10px 0px 10px;
+  text-align: right;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  li {
+    display: inline;
+    padding: 10px;
+    line-height: 24px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    a {
+      color: inherit;
+      font: 1.2em sans-serif;
+      text-align: center;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+    &.active {
+      color: #d34410;
+      &:hover {
+        border: 1px solid #ffffff;
+
+        @include easeOut();
+      }
+    }
+    &:hover {
+      border: 1px solid #d34410;
+      color: #d34410;
+      @include easeOut();
+    }
+  }
+  //ICON HAMBURGER
+  .icon {
+    display: none;
+    background: lighten(#333333, 10);
+    padding: 10px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 99;
+  }
+  .hamburger {
+    padding: 0;
+    margin: 0;
+    width: 40px;
+    height: 4px;
+    background: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 50%;
+    right: 47%;
+    transform: translate(50%, -50%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+    @include easeOut;
+  }
+  .hamburger:before,
+  .hamburger:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, 0%);
+    width: 40px;
+    height: 4px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+    @include easeOut;
+  }
+  .hamburger:before {
+    top: -12px;
+  }
+  .hamburger:after {
+    top: 12px;
+  }
+  .icon.show .hamburger {
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+  }
+
+  .icon.show .hamburger:before {
+    top: 0;
+    right: 0;
+    transform: translate(0, 0);
+    transform: rotateZ(45deg) scalex(1);
+  }
+  .icon.show .hamburger:after {
+    top: 0;
+    right: 0;
+    transform: translate(0, 0);
+    transform: rotateZ(-45deg) scalex(1);
+  }
+}
+
+//MOBILE VIEW
+@media screen and (max-width: 600px) {
+  .custom-nav {
+    background: lighten(#333333, 10);
+    nav {
+      padding-top: 49px;
+    }
+
+    ul {
+      padding: 5px 0px;
+      margin-bottom: 10px;
+      margin-top: -200px;
+      @include bounceOut();
+    }
+    li {
+      display: block;
+      text-align: center;
+      width: 70%;
+      margin: auto;
+    }
+    .icon {
+      display: block;
+    }
+  }
+}

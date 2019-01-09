@@ -1,0 +1,14 @@
+.logo {
+  padding: 10px 10px 5px 0px;
+  margin: auto;
+}
+@media screen and (max-width: 600px) {
+  .logo {
+    padding-left: 20px;
+    position: absolute;
+    transform: translate(0, 0);
+    background: #333333;
+
+    width: 88%;
+  }
+}

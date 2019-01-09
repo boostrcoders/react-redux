@@ -1,0 +1,15 @@
+.custom-header {
+  display: grid;
+  grid-template-columns: 20% auto;
+  background: #333;
+}
+
+.custom-header:nth-child(1) {
+}
+//MOBILE VIEW
+@media screen and (max-width: 600px) {
+  .custom-header {
+    background: #333333;
+    grid-template-columns: 100% 100%;
+  }
+}
