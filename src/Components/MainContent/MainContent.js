@@ -1,11 +1,28 @@
 import React from "react";
-import Section1 from "./Section1/Section1";
+import InputTextBox from "./InputTextBox";
+import TaskList from "./TaskList";
 import "./MainContent.scss";
 
 const MainContent = props => {
   return (
     <div className="main-content">
-      <Section1 />
+      <div>
+        <h2>
+          {props.activePage}
+          <InputTextBox
+            newTodo={props.newTodo}
+            formSubmitted={props.formSubmitted}
+            newTodoChange={props.newTodoChange}
+            message={props.message}
+          />
+        </h2>
+        <TaskList
+          checkAll={props.checkAll}
+          toggleTodoDone={props.toggleTodoDone}
+          removeTodo={props.removeTodo}
+          todos={props.todos}
+        />
+      </div>
     </div>
   );
 };

@@ -5,3 +5,6 @@ html {
   box-sizing: border-box;
   color: #333333;
 }
+.todo-done {
+  text-decoration: line-through;
+}
