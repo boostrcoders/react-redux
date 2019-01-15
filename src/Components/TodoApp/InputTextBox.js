@@ -10,7 +10,7 @@ const InputTextBox = props => {
         <input
           type="text"
           name="newTodo"
-          onChange={props.newTodoChange}
+          onChange={event => props.newTodoChange(event.target.value)}
           value={props.newTodo}
           placeholder="Input task here..."
           className="textInput"

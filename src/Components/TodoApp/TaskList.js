@@ -5,9 +5,9 @@ import "./MainContent.scss";
 const TaskList = props => {
   return (
     <div>
-      <label className="checkall" onClick={props.checkAll}>
-        All Done
-      </label>
+      <span className="checkall" onClick={() => props.checkAll()}>
+        {props.allDone ? "Uncheck All" : "All Done"}
+      </span>
       <div className="dropdown">
         &nbsp;&nbsp;| <button className="dropbtn">View</button>
         <div className="dropdown-content">
