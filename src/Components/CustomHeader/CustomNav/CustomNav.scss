@@ -15,6 +15,7 @@
     margin: 0;
     padding: 0;
     margin-top: 0;
+    overflow: hidden;
   }
 
   li {
@@ -112,22 +113,28 @@
 @media screen and (max-width: 600px) {
   .custom-nav {
     background: lighten(#333333, 10);
+    margin-top: 48px;
+   
     nav {
-      padding-top: 49px;
+      height: 0px;
+      
+      overflow: hidden;
+      @include bounceOut();
     }
 
     ul {
-      padding: 5px 0px;
-      margin-bottom: 10px;
-      margin-top: -200px;
-      @include bounceOut();
+      padding: 15px 0px;
+   
+      
+      
+      li {
+        display: block;
+        text-align: center;
+        width: 70%;
+        margin: auto;
+      }
     }
-    li {
-      display: block;
-      text-align: center;
-      width: 70%;
-      margin: auto;
-    }
+    
     .icon {
       display: block;
     }

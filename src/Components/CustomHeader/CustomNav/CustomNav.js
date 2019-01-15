@@ -3,14 +3,15 @@ import "./CustomNav.scss";
 
 function CustomNav(props) {
   const showMobileNav = () => {
-    let toggle = document.querySelector("#nav-body").style.marginTop;
-
-    if (toggle === "0px") {
-      document.querySelector("#nav-body").style.marginTop = "-200px";
-      document.querySelector(".icon").classList.remove("show");
-    } else {
-      document.querySelector("#nav-body").style.marginTop = 0;
+    let toggle = document.querySelector("nav").style.height;
+    console.log(toggle);
+    if (toggle === "0px" || toggle === "") {
+      document.querySelector("nav").style.height = "210px";
       document.querySelector(".icon").classList.add("show");
+    } 
+    else {
+      document.querySelector("nav").style.height = "0px";
+      document.querySelector(".icon").classList.remove("show");
     }
   };
   return (
