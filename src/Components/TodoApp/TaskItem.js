@@ -3,7 +3,18 @@ import "./MainContent.scss";
 
 const TaskItem = props => {
   return (
-    <div className="task-card" key={props.index}>
+    <div
+      className={
+        props.view === "Active" && props.todo.done === false
+          ? "task-card show"
+          : props.view === "Done" && props.todo.done === true
+          ? "task-card show"
+          : props.view === "Show All"
+          ? "task-card show"
+          : "task-card hide"
+      }
+      key={props.index}
+    >
       <label className="task">
         <input
           type="checkbox"

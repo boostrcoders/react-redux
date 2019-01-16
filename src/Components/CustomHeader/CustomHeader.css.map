@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACb,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,QAAQ;EAC/B,UAAU,EAAE,IAAI;CACjB;;AAKD,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EACjC,AAAA,cAAc,CAAC;IACb,UAAU,EAAE,OAAO;IACnB,qBAAqB,EAAE,SAAS;GACjC",
+    "sources": [
+        "CustomHeader.scss"
+    ],
+    "names": [],
+    "file": "CustomHeader.css"
+}

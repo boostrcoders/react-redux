@@ -4,11 +4,13 @@ const TOGGLE_TODO_DONE = "TOGGLE_TODO_DONE";
 const REMOVE_TODO = "REMOVE _TODO";
 const ALL_DONE = "ALL_DONE";
 const STATUS_ALL_DONE = "STATUS_ALL_DONE";
+const VIEW_STATUS = "VIEW_STATUS";
 
 const initialState = {
   activePage: "Todo List",
   newTodo: "",
   allDone: 0,
+  view: "Show All",
   todos: [
     { title: "Learn React", done: false },
     { title: "Learn React2", done: false }
@@ -49,6 +51,12 @@ export const actions = {
   statusAllDone() {
     return {
       type: STATUS_ALL_DONE
+    };
+  },
+  viewStatus(viewInput) {
+    return {
+      type: VIEW_STATUS,
+      viewInput
     };
   }
 };
@@ -114,6 +122,12 @@ export function reducer(state = initialState, action) {
       return {
         ...state,
         allDone: count === state.todos.length ? true : false
+      };
+    }
+    case VIEW_STATUS: {
+      return {
+        ...state,
+        view: action.viewInput
       };
     }
     default:

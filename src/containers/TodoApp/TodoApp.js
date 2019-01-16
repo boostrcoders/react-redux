@@ -40,6 +40,8 @@ class TodoApp extends Component {
             />
           </h2>
           <TaskList
+            view={this.props.view}
+            viewStatus={this.props.onViewStatus}
             allDone={this.props.allDone}
             toggleTodoDone={this.toggleTodoDone.bind(this)} //Simplest way to bind
             removeTodo={this.props.onRemoveTodo} //Simplest way to bind
@@ -57,7 +59,8 @@ function mapStateToProps(state) {
     activePage: state.activePage,
     newTodo: state.newTodo,
     allDone: state.allDone,
-    todos: state.todos
+    todos: state.todos,
+    view: state.view
   };
 }
 
@@ -80,6 +83,10 @@ function mapDispatchToProps(dispatch) {
     },
     onStatusAllDone() {
       dispatch(actions.statusAllDone());
+    },
+    onViewStatus(viewInput) {
+      console.log(viewInput);
+      dispatch(actions.viewStatus(viewInput));
     }
   };
 }

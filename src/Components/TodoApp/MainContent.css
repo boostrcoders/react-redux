@@ -1,0 +1,233 @@
+.main-content {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  padding: 20px 5%;
+}
+
+h2 {
+  margin: 20px 0px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.btn {
+  position: absolute;
+  z-index: 1;
+  margin-top: -50px;
+  right: 5%;
+  width: 40px;
+  height: 45px;
+  padding: 15px 10px 0px 10px;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 20px;
+  color: #f1f1f1;
+  background: #d34410;
+  cursor: pointer;
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  opacity: 0.8;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.btn:before {
+  content: "\002716";
+}
+
+.btn:hover {
+  /* transform: scale(1.2); */
+  color: #333;
+  background: #f1f1f1;
+  -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.8);
+          box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.8);
+}
+
+/* Textinput */
+.textInput {
+  position: absolute;
+  margin-top: -50px;
+  right: 5%;
+  width: 0px;
+  height: 40px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  background: #333;
+  font-size: 20px;
+  color: #f1f1f1;
+  opacity: 0;
+  -webkit-transition: all 0.8s cubic-bezier(0.49, 0.19, 0.37, 1.56);
+  transition: all 0.8s cubic-bezier(0.49, 0.19, 0.37, 1.56);
+}
+
+#toggle {
+  display: none;
+}
+
+#toggle:checked ~ .textInput {
+  width: calc(90% - 200px);
+  opacity: 0.5;
+}
+
+#toggle:checked + .btn {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  background: rgba(0, 0, 0, 0);
+  opacity: 1;
+}
+
+#toggle:checked + .btn:hover {
+  color: #cc3333;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#toggle:checked label:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  content: "\002716";
+}
+
+.task-container {
+  overflow: auto;
+  padding-top: 10px;
+}
+
+.task-container .task-card {
+  margin: 5px auto;
+  border: 1px solid #eee;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  width: 80vw;
+  padding: 5px;
+  -ms-grid-columns: auto 8%;
+      grid-template-columns: auto 8%;
+  grid-gap: 10px;
+}
+
+.task-container .task-card:hover {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.task-container .task-card .task {
+  display: block;
+  position: relative;
+  padding: 10px 0px 10px 55px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.task-container .task-card .task .todo-done {
+  text-decoration: line-through;
+  color: #999999;
+}
+
+.task-container .task-card .task:hover #task-item ~ .checkmark {
+  border: 4px solid #d34410;
+}
+
+.task-container .task-card .task #task-item {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.task-container .task-card .task #task-item:checked ~ .checkmark {
+  background: #d34410;
+  border: 4px solid #f28057;
+}
+
+.task-container .task-card .task #task-item:checked ~ .checkmark:after {
+  display: block;
+}
+
+.task-container .task-card .task .checkmark {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 20px;
+  width: 20px;
+  margin: 10px 0px 10px 10px;
+  background: #f1f1f1;
+  border: 4px solid #b3b3b3;
+  border-radius: 100%;
+}
+
+.task-container .task-card .task .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.task-container .task-card .delete-task {
+  padding: 10px 0px;
+  cursor: pointer;
+  font-size: 22px;
+  color: #e6e6e6;
+}
+
+.task-container .task-card .delete-task:hover {
+  color: #cc3333;
+}
+
+.task-container .show {
+  display: -ms-grid;
+  display: grid;
+}
+
+.task-container .hide {
+  display: none;
+}
+
+.sub-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.sub-menu ul li {
+  display: inline;
+  cursor: pointer;
+  color: #b3b3b3;
+}
+
+.sub-menu ul li:hover {
+  color: #cc3333;
+}
+
+.sub-menu ul li:not(:first-child):before {
+  content: "";
+  border-right: 2px solid #e6e6e6;
+  font-size: 12px;
+  margin: 10px;
+}
+
+.sub-menu ul li:last-child:before {
+  content: "";
+  border-right: 0px solid #e6e6e6;
+  font-size: 12px;
+  margin: 10px;
+}
+
+.sub-menu ul li:not(:first-child) {
+  float: right;
+}
+
+.sub-menu .active {
+  color: #cc3333;
+}
+/*# sourceMappingURL=MainContent.css.map */

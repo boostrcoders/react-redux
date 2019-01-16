@@ -1,0 +1,16 @@
+.custom-header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% auto;
+      grid-template-columns: 20% auto;
+  background: #333;
+}
+
+@media screen and (max-width: 600px) {
+  .custom-header {
+    background: #333333;
+    -ms-grid-columns: 100% 100%;
+        grid-template-columns: 100% 100%;
+  }
+}
+/*# sourceMappingURL=CustomHeader.css.map */
