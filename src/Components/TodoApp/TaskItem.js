@@ -22,12 +22,7 @@ const TaskItem = props => {
           onChange={event => props.toggleTodoDone(event, props.index)}
           checked={props.todo.done}
         />
-        <span
-          // style={{
-          //   textDecoration: todo.done ? "line-through" : "inherit"
-          // }}
-          className={props.todo.done ? "todo-done" : ""}
-        >
+        <span className={props.todo.done ? "todo-done" : ""}>
           {props.todo.title}
         </span>
 

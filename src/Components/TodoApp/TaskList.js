@@ -7,29 +7,21 @@ const TaskList = props => {
     <div>
       <div className="sub-menu">
         <ul>
-          <li
-            className={props.allDone ? "active" : ""}
-            onClick={() => props.checkAll()}
-          >
-            {props.allDone ? "Uncheck All" : "All Done"}
-          </li>
-          <li
-            className={props.view === "Done" ? "active" : ""}
-            onClick={() => props.viewStatus("Done")}
-          >
-            Done
-          </li>
-          <li
-            className={props.view === "Active" ? "active" : ""}
-            onClick={() => props.viewStatus("Active")}
-          >
-            Active
-          </li>
-          <li
-            className={props.view === "Show All" ? "active" : ""}
-            onClick={() => props.viewStatus("Show All")}
-          >
-            Show All
+          <li>
+            <label className="task">
+              <input
+                type="checkbox"
+                id="task-item"
+                // onChange={event => props.toggleTodoDone(event, props.index)}
+                onChange={() => props.checkAll()}
+                checked={props.allDone ? true : false}
+              />
+              <span className={props.allDone ? "todo-done" : ""}>
+                {props.allDone ? "Uncheck All" : "All Done"}
+              </span>
+
+              <span className="checkmark" />
+            </label>
           </li>
         </ul>
       </div>
@@ -46,6 +38,28 @@ const TaskList = props => {
             />
           );
         })}
+      </div>
+      <div className="sub-menu">
+        <ul>
+          <li
+            className={props.view === "Show All" ? "active" : ""}
+            onClick={() => props.viewStatus("Show All")}
+          >
+            Show All
+          </li>
+          <li
+            className={props.view === "Active" ? "active" : ""}
+            onClick={() => props.viewStatus("Active")}
+          >
+            Active
+          </li>
+          <li
+            className={props.view === "Done" ? "active" : ""}
+            onClick={() => props.viewStatus("Done")}
+          >
+            Done
+          </li>
+        </ul>
       </div>
     </div>
   );
