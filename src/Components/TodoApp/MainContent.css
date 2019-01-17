@@ -5,17 +5,22 @@
   padding: 20px 5%;
 }
 
-h2 {
-  margin: 20px 0px;
+.title-input-bar {
+  margin: 0px 0px;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 1px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  grid-gap: 10px;
 }
 
 .btn {
   position: absolute;
   z-index: 1;
-  margin-top: -50px;
+  margin-top: 0px;
   right: 5%;
   width: 40px;
   height: 45px;
@@ -48,7 +53,7 @@ h2 {
 /* Textinput */
 .textInput {
   position: absolute;
-  margin-top: -50px;
+  margin-top: 0px;
   right: 5%;
   width: 0px;
   height: 40px;
@@ -69,8 +74,8 @@ h2 {
 }
 
 #toggle:checked ~ .textInput {
-  width: calc(90% - 200px);
-  opacity: 0.5;
+  width: 60%;
+  opacity: 0.8;
 }
 
 #toggle:checked + .btn {
@@ -94,7 +99,9 @@ h2 {
 
 .task-container {
   overflow: auto;
-  padding-top: 10px;
+  height: calc(100vh - 295px);
+  min-height: 180px;
+  border-bottom: 1px solid #f2f2f2;
 }
 
 .task-container .task-card {
@@ -119,9 +126,9 @@ h2 {
 .task-container .task-card .task {
   display: block;
   position: relative;
-  padding: 10px 0px 10px 55px;
+  padding: 10px 0px 10px 45px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 20px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -192,16 +199,72 @@ h2 {
   display: none;
 }
 
+.sub-menu .task {
+  display: block;
+  position: relative;
+  padding: 10px 0px 10px 35px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.sub-menu .task .todo-done {
+  text-decoration: line-through;
+  color: #999999;
+}
+
+.sub-menu .task:hover #task-item ~ .checkmark {
+  border: 4px solid #d34410;
+}
+
+.sub-menu .task #task-item {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.sub-menu .task #task-item:checked ~ .checkmark {
+  background: #d34410;
+  border: 4px solid #f28057;
+}
+
+.sub-menu .task #task-item:checked ~ .checkmark:after {
+  display: block;
+}
+
+.sub-menu .task .checkmark {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 12px;
+  width: 12px;
+  margin: 10px 0px 10px 10px;
+  background: #f1f1f1;
+  border: 4px solid #b3b3b3;
+  border-radius: 100%;
+}
+
+.sub-menu .task .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
 .sub-menu ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  padding: 0px;
   overflow: hidden;
 }
 
 .sub-menu ul li {
   display: inline;
   cursor: pointer;
+  font-size: 14px;
   color: #b3b3b3;
 }
 
@@ -216,18 +279,8 @@ h2 {
   margin: 10px;
 }
 
-.sub-menu ul li:last-child:before {
-  content: "";
-  border-right: 0px solid #e6e6e6;
-  font-size: 12px;
-  margin: 10px;
-}
-
-.sub-menu ul li:not(:first-child) {
-  float: right;
-}
-
 .sub-menu .active {
-  color: #cc3333;
+  color: #e08585;
+  text-decoration: underline;
 }
 /*# sourceMappingURL=MainContent.css.map */

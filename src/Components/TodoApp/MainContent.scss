@@ -10,17 +10,20 @@
   padding: 20px 5%;
 }
 
-h2 {
-  margin: 20px 0px;
+.title-input-bar {
+  margin: 0px 0px;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 1px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
 }
 //INPUT TEXT BOX
 .btn {
   position: absolute;
   z-index: 1;
-  margin-top: -50px;
+  margin-top: 0px;
   right: 5%;
   width: 40px;
   height: 45px;
@@ -49,7 +52,7 @@ h2 {
 /* Textinput */
 .textInput {
   position: absolute;
-  margin-top: -50px;
+  margin-top: 0px;
   right: 5%;
   width: 0px;
   height: 40px;
@@ -66,8 +69,8 @@ h2 {
 #toggle {
   display: none;
   &:checked ~ .textInput {
-    width: calc(90% - 200px);
-    opacity: 0.5;
+    width: 60%;
+    opacity: 0.8;
   }
   &:checked + .btn {
     transform: rotate(0deg);
@@ -178,6 +181,7 @@ h2 {
 }
 .sub-menu {
   //Position Container(LABEL)
+
   .task {
     display: block;
     position: relative;
@@ -258,4 +262,4 @@ h2 {
     text-decoration: underline;
   }
 }
-//TASKITEM
+//MOBILE VIEW

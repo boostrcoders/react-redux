@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import InputTextBox from "../../Components/TodoApp/InputTextBox";
 import TaskList from "../../Components/TodoApp/TaskList";
 import { connect } from "react-redux";
-import "../../Components/TodoApp/MainContent.scss";
+import "../../Components/TodoApp/MainContent.css";
 import { actions } from "../../store";
 
 class TodoApp extends Component {
@@ -30,15 +30,15 @@ class TodoApp extends Component {
     return (
       <div className="main-content">
         <div>
-          <h2>
-            {this.props.activePage}
+          <div className="title-input-bar">
+            <span>{this.props.activePage}</span>
 
             <InputTextBox
               newTodo={this.props.newTodo}
               formSubmitted={event => this.formSubmitted(event)} //Other way to bind
               newTodoChange={this.props.onNewTodoChanged} //Other way to bind
             />
-          </h2>
+          </div>
           <TaskList
             view={this.props.view}
             viewStatus={this.props.onViewStatus}

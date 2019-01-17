@@ -1,5 +1,5 @@
 import React from "react";
-import "./MainContent.scss";
+import "./MainContent.css";
 
 const TaskItem = props => {
   return (

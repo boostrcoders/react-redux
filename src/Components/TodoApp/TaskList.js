@@ -1,6 +1,6 @@
 import React from "react";
 import TaskItem from "./TaskItem";
-import "./MainContent.scss";
+import "./MainContent.css";
 
 const TaskList = props => {
   return (
